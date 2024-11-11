@@ -5,11 +5,7 @@ function bisection(a : number,b : number) {
         do {
             iteration = 0.5 * (a + b);
             console.log(iteration, func(iteration));
-            if (func(iteration) * func(a) < 0) {
-                b = iteration;
-            } else {
-                a = iteration;
-            }
+            (func(iteration) * func(a) < 0) ? b = iteration : a = iteration;
         } while (Math.abs(func(iteration)) > 1e-9);
     }else if (func(a) === 0) {console.log(func(a));
     }else if(func(b) ===0) {console.log(func(b));
